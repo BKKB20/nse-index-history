@@ -1,0 +1,287 @@
+"""
+config.py — Index metadata for all 32 target indices.
+Maps index names → expected constituent count, exchange, and keyword patterns
+used to identify circulars that belong to each index.
+"""
+
+INDEX_CONFIG = {
+    # ── NSE Broad Market ──────────────────────────────────────────────────────
+    "NIFTY 50": {
+        "size": 50,
+        "exchange": "NSE",
+        "keywords": ["nifty 50", "nifty50"],
+        "exclude_keywords": ["next 50", "midcap", "smallcap", "bank nifty",
+                             "alpha", "low vol", "500", "100", "200"],
+    },
+    "NIFTY Next 50": {
+        "size": 50,
+        "exchange": "NSE",
+        "keywords": ["nifty next 50", "nifty next50", "next 50"],
+        "exclude_keywords": [],
+    },
+    "NIFTY 100": {
+        "size": 100,
+        "exchange": "NSE",
+        "keywords": ["nifty 100", "nifty100"],
+        "exclude_keywords": ["200", "500"],
+    },
+    "NIFTY 500": {
+        "size": 500,
+        "exchange": "NSE",
+        "keywords": ["nifty 500", "nifty500"],
+        "exclude_keywords": [],
+    },
+    # ── BSE Broad Market ──────────────────────────────────────────────────────
+    "BSE Sensex": {
+        "size": 30,
+        "exchange": "BSE",
+        "keywords": ["sensex", "s&p bse sensex", "bse sensex"],
+        "exclude_keywords": [],
+    },
+    "S&P BSE 500": {
+        "size": 500,
+        "exchange": "BSE",
+        "keywords": ["s&p bse 500", "bse 500", "bse500"],
+        "exclude_keywords": ["midcap", "smallcap"],
+    },
+    # ── NSE Market-Cap ────────────────────────────────────────────────────────
+    "NIFTY Midcap 150": {
+        "size": 150,
+        "exchange": "NSE",
+        "keywords": ["nifty midcap 150", "midcap 150"],
+        "exclude_keywords": ["50"],
+    },
+    "NIFTY Smallcap 250": {
+        "size": 250,
+        "exchange": "NSE",
+        "keywords": ["nifty smallcap 250", "smallcap 250"],
+        "exclude_keywords": ["50", "100"],
+    },
+    "NIFTY Midcap 50": {
+        "size": 50,
+        "exchange": "NSE",
+        "keywords": ["nifty midcap 50", "midcap 50"],
+        "exclude_keywords": ["150"],
+    },
+    # ── BSE Market-Cap ────────────────────────────────────────────────────────
+    "S&P BSE MidCap": {
+        "size": None,  # variable
+        "exchange": "BSE",
+        "keywords": ["s&p bse midcap", "bse midcap"],
+        "exclude_keywords": ["smallcap"],
+    },
+    "S&P BSE SmallCap": {
+        "size": None,
+        "exchange": "BSE",
+        "keywords": ["s&p bse smallcap", "bse smallcap"],
+        "exclude_keywords": ["midcap"],
+    },
+    # ── NSE Sectoral ──────────────────────────────────────────────────────────
+    "NIFTY Bank": {
+        "size": 12,
+        "exchange": "NSE",
+        "keywords": ["nifty bank", "bank nifty", "bank index"],
+        "exclude_keywords": ["psu bank", "private bank", "financial services"],
+    },
+    "NIFTY Financial Services": {
+        "size": 20,
+        "exchange": "NSE",
+        "keywords": ["nifty financial services", "financial services index"],
+        "exclude_keywords": ["bank"],
+    },
+    "NIFTY PSU Bank": {
+        "size": 12,
+        "exchange": "NSE",
+        "keywords": ["nifty psu bank", "psu bank"],
+        "exclude_keywords": ["private"],
+    },
+    "NIFTY Private Bank": {
+        "size": 10,
+        "exchange": "NSE",
+        "keywords": ["nifty private bank", "private bank"],
+        "exclude_keywords": ["psu"],
+    },
+    "NIFTY IT": {
+        "size": 10,
+        "exchange": "NSE",
+        "keywords": ["nifty it", "nifty i.t.", "it index"],
+        "exclude_keywords": [],
+    },
+    "NIFTY FMCG": {
+        "size": 15,
+        "exchange": "NSE",
+        "keywords": ["nifty fmcg", "fmcg index"],
+        "exclude_keywords": [],
+    },
+    "NIFTY Auto": {
+        "size": 15,
+        "exchange": "NSE",
+        "keywords": ["nifty auto", "auto index"],
+        "exclude_keywords": [],
+    },
+    "NIFTY Pharma": {
+        "size": 20,
+        "exchange": "NSE",
+        "keywords": ["nifty pharma", "pharma index"],
+        "exclude_keywords": [],
+    },
+    "NIFTY Energy": {
+        "size": 15,
+        "exchange": "NSE",
+        "keywords": ["nifty energy", "energy index"],
+        "exclude_keywords": [],
+    },
+    "NIFTY Metal": {
+        "size": 15,
+        "exchange": "NSE",
+        "keywords": ["nifty metal", "metal index"],
+        "exclude_keywords": [],
+    },
+    "NIFTY Commodities": {
+        "size": 30,
+        "exchange": "NSE",
+        "keywords": ["nifty commodities", "commodities index"],
+        "exclude_keywords": [],
+    },
+    "NIFTY Realty": {
+        "size": 10,
+        "exchange": "NSE",
+        "keywords": ["nifty realty", "realty index"],
+        "exclude_keywords": [],
+    },
+    "NIFTY Infrastructure": {
+        "size": 30,
+        "exchange": "NSE",
+        "keywords": ["nifty infrastructure", "infrastructure index"],
+        "exclude_keywords": [],
+    },
+    "NIFTY Media": {
+        "size": 15,
+        "exchange": "NSE",
+        "keywords": ["nifty media", "media index"],
+        "exclude_keywords": [],
+    },
+    "NIFTY CPSE": {
+        "size": 12,
+        "exchange": "NSE",
+        "keywords": ["nifty cpse", "cpse index"],
+        "exclude_keywords": [],
+    },
+    "NIFTY India Defence": {
+        "size": None,
+        "exchange": "NSE",
+        "keywords": ["nifty india defence", "india defence", "defence index"],
+        "exclude_keywords": [],
+    },
+    "NIFTY Manufacturing": {
+        "size": None,
+        "exchange": "NSE",
+        "keywords": ["nifty manufacturing", "manufacturing index"],
+        "exclude_keywords": [],
+    },
+    # ── NSE Strategy / Factor ─────────────────────────────────────────────────
+    "NIFTY Alpha 50": {
+        "size": 50,
+        "exchange": "NSE",
+        "keywords": ["nifty alpha 50", "alpha 50"],
+        "exclude_keywords": [],
+    },
+    "NIFTY Low Volatility 50": {
+        "size": 50,
+        "exchange": "NSE",
+        "keywords": ["nifty low volatility 50", "low volatility 50", "low vol 50"],
+        "exclude_keywords": [],
+    },
+    "NIFTY MNC": {
+        "size": 30,
+        "exchange": "NSE",
+        "keywords": ["nifty mnc", "mnc index"],
+        "exclude_keywords": [],
+    },
+    "NIFTY India Consumption": {
+        "size": 30,
+        "exchange": "NSE",
+        "keywords": ["nifty india consumption", "india consumption"],
+        "exclude_keywords": [],
+    },
+}
+
+# ── Known ticker / name aliases (corporate actions, renames, mergers) ─────────
+# Format: { old_name_or_ticker: canonical_name }
+ALIAS_MAP = {
+    # Renames
+    "ZEEL": "ZEE",
+    "MOTHERSUMI": "MOTHERSON",
+    "M&MFIN": "M&MFIN",
+    "PFC": "PFC",
+    "RECLTD": "REC",
+    "MINDTREE": "LTIM",          # merged into LTIMindtree
+    "LTIMINDTREE": "LTIM",
+    "MPHASIS": "MPHASIS",
+    "HDFC": "HDFCBANK",          # post-merger (HDFC Ltd → HDFCBANK)
+    "HDFCAMC": "HDFCAMC",
+    "CHOLAHLDNG": "CHOLAFIN",
+    "BAJFINANCE": "BAJFINANCE",
+    "NAUKRI": "NAUKRI",
+    "INFOEDGE": "NAUKRI",
+    "JUSTDIAL": "JUSTDIAL",
+    "NATIONALUM": "NATIONALUM",
+    "HINDPETRO": "HINDPETRO",
+    "BPCL": "BPCL",
+    "IOC": "IOC",
+    "ONGC": "ONGC",
+    "VEDL": "VEDL",
+    "VEDANTA": "VEDL",
+    "HINDZINC": "HINDZINC",
+    "TATASTEEL": "TATASTEEL",
+    "JSWSTEEL": "JSWSTEEL",
+    "SAIL": "SAIL",
+    "NMDC": "NMDC",
+    "COALINDIA": "COALINDIA",
+    "POWERGRID": "POWERGRID",
+    "NTPC": "NTPC",
+    "ADANIPORTS": "ADANIPORTS",
+    "ADANIGREEN": "ADANIGREEN",
+    "ADANITRANS": "ADANITRANS",
+    "ADANIENT": "ADANIENT",
+    "ADANIPOWER": "ADANIPOWER",
+    "GAIL": "GAIL",
+    "PETRONET": "PETRONET",
+    "IGL": "IGL",
+    "MGL": "MGL",
+    "CONCOR": "CONCOR",
+    "IRCTC": "IRCTC",
+    "RVNL": "RVNL",
+    "HAL": "HAL",
+    "BEL": "BEL",
+    "BHEL": "BHEL",
+    "BEML": "BEML",
+    "MAZDOCK": "MAZDOCK",
+    "COCHINSHIP": "COCHINSHIP",
+    "GARDENREACH": "GRSE",
+    "GRSE": "GRSE",
+    "PARAS DEFENCE": "PARASDEF",
+    "SOLARINDS": "SOLARINDS",
+    "IDEA": "IDEA",
+    "VODAIDEA": "IDEA",
+    "BHARTIARTL": "BHARTIARTL",
+    "RJIO": "RJIO",
+    "TATACOMM": "TATACOMM",
+    "INDIAMART": "INDIAMART",
+    "FSL": "FSL",
+    "LAXMIMACH": "LAXMIMACH",
+    "SUNTV": "SUNTV",
+    "PVRINOX": "PVRINOX",
+    "PVR": "PVRINOX",            # PVR + INOX merged
+    "INOXLEISUR": "PVRINOX",
+    "ZOMATO": "ZOMATO",
+    "PAYTM": "PAYTM",
+    "NYKAA": "NYKAA",
+    "POLICYBZR": "POLICYBZR",
+    "CARTRADE": "CARTRADE",
+    "DELHIVERY": "DELHIVERY",
+    "CAMPUS": "CAMPUS",
+    "BIKAJI": "BIKAJI",
+    "GLOBALHEALTH": "GLOBALHEALTH",
+    "MEDANTA": "GLOBALHEALTH",
+}
