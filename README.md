@@ -55,4 +55,4 @@ The Excel file contains:
 
 ## Built By
 
-Bhavya Khaitan — First Year B.Tech Textile Technology, VJTI Mumbai
+Bhavya Khaitan — Second Year B.Tech Textile Technology, VJTI Mumbai
